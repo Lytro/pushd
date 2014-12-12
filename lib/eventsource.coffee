@@ -30,6 +30,7 @@ exports.setup = (app, authorize, eventPublisher) ->
       return
 
     eventNames = req.query.events.split ' '
+    logger.verbose "Event names to listen for: " + JSON.stringify(eventNames)
 
     req.socket.setTimeout(Infinity)
     req.socket.setNoDelay(true)
@@ -53,6 +54,7 @@ exports.setup = (app, authorize, eventPublisher) ->
         data: payload.data
 
       res.write("data: " + JSON.stringify(data) + "\n\n")
+      logger.verbose "Sending event '" + event.name + "' with data: " + JSON.stringify(data)
 
     antiIdleInterval = setInterval ->
       res.write "\n"

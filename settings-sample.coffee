@@ -113,7 +113,8 @@ exports['mpns-raw'] =
 # See https://github.com/flatiron/winston#working-with-transports for
 # other transport-specific options.
 exports['logging'] = [
-        transport: 'Console'
-        options:
-            level: 'info'
-    ]
+    transport: 'File'
+    options:
+        level: 'verbose'
+        filename: 'pushd.log'
+]

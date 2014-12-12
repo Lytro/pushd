@@ -9,6 +9,7 @@ class EventPublisher extends events.EventEmitter
     try
       payload = new Payload(data)
       payload.event = event
+      logger.verbose "Creating payload from data for event '"+ event.name + "'"
     catch e
     # Invalid payload (empty, missing key or invalid key format)
       logger.error 'Invalid payload ' + e
