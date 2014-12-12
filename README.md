@@ -458,7 +458,7 @@ Here is a simple PHP example to post an UDP event:
 
 #### Event Statistics
 
-When an event get at least one subscriber, pushd start to account some statistics on the event. Those stats persists until the event keep at least one subscriber. Those statistics can be used for monitoring or to present stats about the event to the user like approx number of notification per day for this event.
+When an event has at least one subscriber, pushd begins to track statistics on the event. These stats persist as long as three is at least one subscriber. Those statistics can be used for monitoring or to present stats about the event to the user like approx number of notification per day for this event.
 
 To get statistics from an event, perform a GET on `/event/EVENT_NAME`:
 
@@ -480,7 +480,7 @@ To get statistics from an event, perform a GET on `/event/EVENT_NAME`:
 
 #### Event Purge
 
-When the application data provider know about a particular event will no longer be available, it can force pushd to forget about it and unsubscribe all current subscribers from it. To purge an event, perform a DELETE on `/event/EVENT_NAME`
+When the application data provider knows when a particular event will no longer be available, it can force pushd to forget about it and unsubscribe all current subscribers from it. To purge an event, perform a DELETE on `/event/EVENT_NAME`
 
     > DELETE /event/EVENT_NAME HTTP/1.1
     >
@@ -516,7 +516,7 @@ Testing
 
 ### Unit tests
 
-`npm tests`
+`npm test`
 
 ### Performance testing
 
