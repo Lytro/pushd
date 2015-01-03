@@ -1,3 +1,4 @@
+newrelic = require 'newrelic'
 express = require 'express'
 bodyParser = require 'body-parser'
 dgram = require 'dgram'
